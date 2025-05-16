@@ -1,6 +1,20 @@
 import './App.css'
 import PokemonCard from './components/PokemonCard'
+// npm create vite@latest nome_projeto -- --template react
+// npm install
+// npm run dev
 
+//Desafio:
+/*
+  1.Crie um novo componente de cabeçalho chamado
+    Header que receba um prop title e exiba este
+    título dentro de um <h1>. Utilize esse componente
+    na sua aplicação para mostrar o título da Pokedex
+  2.Adicione mais 10 pokemons na sua lista de pokemons
+    para pegar as imagens, olhe em pokeapi.co
+*/
+
+// https://github.com/xxmgkxx/pokedex_2025
 function App() {
   //Lista de Pokemon estática para demonstração inicial
   const pokemons = [
