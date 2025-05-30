@@ -1,5 +1,6 @@
 import './App.css'
 import PokemonCard from './components/PokemonCard'
+import Header from './components/Header'
 // npm create vite@latest nome_projeto -- --template react
 // npm install
 // npm run dev
@@ -25,7 +26,7 @@ function App() {
 
   return (
     <div className='app'>
-      <h1>Pokedex</h1>
+      <Header title="Pokedex" subtitle="Escolha o seu pokemon"/>
       {/* 
         Mapeando a lista de pokemons para renderizar um PokemonCard 
         para cada um
