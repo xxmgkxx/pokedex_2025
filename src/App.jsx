@@ -25,12 +25,44 @@ function App() {
     { id: 7, name: 'Squirtle', type: 'Water', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png' }
   ]);
 
+  {/* 
+    Criamos uma constante newPokemon com os dados 
+    do Pikachu.
+  */} 
+  const newPokemon = {
+    id: 25,
+    name: 'Pikachu',
+    type: 'Eletric',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'
+  }
+  {/* 
+    Definimos a função addPokemon que usa setPokemons
+    com uma arrow function:
+      preList => [...prevList, newPokemon]
+    Aqui usamos o valor anterior da lista (prevList) e
+    retornamos um novo array contendo todos os elementos
+    anteriores e mais o newPokemon.
+    Isso não 'muta' o array original, mas cria um novo,
+    como o React exige.
+    */}
+  const addPokemon = () => {
+    setPokemons(prevList => [...prevList, newPokemon]);
+  };
+
   return (
     <div className='app'>
       <Header title="Pokedex" subtitle="Escolha o seu pokemon"/>
       {/* 
-        Mapeando a lista de pokemons para renderizar um PokemonCard 
-        para cada um
+        Adicionamos um <button onClick={addPokemon}>
+        Quando clicado, chama addPokemon e atualiza o
+        estado.
+      */}
+      <button onClick={addPokemon}>Adicionar Pokémon</button>
+      {/* 
+        O .map para renderizar PokemonCard permanece igual,
+        mas agora baseia-se no estado pokemons.
+        Conforme pokemons muda, o componente re-renderiza
+        e exibe a lista atualizada.
       */}
       <div className='pokemon-list'>
         {pokemons.map(poke => (
