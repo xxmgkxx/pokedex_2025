@@ -4,15 +4,23 @@ import Header from './components/Header';
 import PokemonList from './components/PokemonList';
 
 /*
-  Com os dados reais carregados, nossa Pokédex está funcional! Vamos para um desafio para consolidar o uso de hooks e manipulação de estado:
-    •	Desafio: Exibir também o número de Pokédex (ID) de cada Pokémon no card, ao lado do nome, usando os dados carregados da API.
+  GIT: https://github.com/xxmgkxx/pokedex_2025
+  Desafio final: Implemente uma funcionalidade de "Carregar Mais"
+  pokemons. Por exemplo, carregar mais 20 quando o usuário
+  clicar em um botão "Carregar Mais".
 
-  Atualmente, PokemonCard mostra somente o nome, mas podemos acrescentar o ID (por exemplo: #1 Bulbasaur). O ID já está disponível em nossos dados (poke.id). Precisaremos:
-    1.	Passar o ID do Pokémon como prop para o PokemonCard.
-    2.	Atualizar o componente PokemonCard para exibir o ID junto do nome.
-  Dicas:
-	•	Podemos formatar o ID com um # na frente, ou mesmo preencher zeros à esquerda se quisermos (não obrigatório, mas #001 fica clássico).
-	•	Lembre de adicionar a prop no lugar certo tanto no mapeamento em PokemonList quanto no componente PokemonCard.
+  Dicas para implementação:
+  - Mantenha um estado para limit ou offset e utilize na
+    URL da API (?limit=20&offset=20 para os próximos 20)
+  - Você pode reutilizar a função fetch ou usar um segundo
+    useEffect dependente de uma variável de página.
+  - Ao carregar mais, você deve concatenar os novos resultados
+    aos já existentes (setPokemList(prev => [...prev,...novos])).
+  - Lembre de tratar o caso de não haver mais pokémons 
+    (a API tem um total fixo).
+  Esse desafio envolve pensar no ciclo completo: eventos,
+  atualização de estado que dispara efeito, e atualizar
+  lista - Combinando useState e useEffect de forma dinâmica.
 */
 function App() {
   return (

@@ -14,7 +14,7 @@ function PokemonList() {
     async function fetchPokemons() {
       try {
         // 1. Fetch da lista dos primeiros 20 pokémons
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=25');
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
         if (!response.ok) {
           throw new Error(`Erro ao buscar lista: ${response.status}`);
         }
