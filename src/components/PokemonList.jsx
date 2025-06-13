@@ -7,6 +7,8 @@ function PokemonList() {
   const [loading, setLoading] = useState(true);          // Estado de carregamento
   const [error, setError] = useState(null);              // Estado de erro (null = sem erro)
   const [searchTerm, setSearchTerm] = useState('');
+  const [limit, setLimit] = useState(20);
+  const [offset, setOffset] = useState(0);
 
 
   useEffect(() => {
@@ -14,7 +16,7 @@ function PokemonList() {
     async function fetchPokemons() {
       try {
         // 1. Fetch da lista dos primeiros 20 pokémons
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
         if (!response.ok) {
           throw new Error(`Erro ao buscar lista: ${response.status}`);
         }
